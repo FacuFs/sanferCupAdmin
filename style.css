@@ -1,0 +1,141 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  /* Encabezado */
+  header {
+    background-color: #f4f4f4;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+
+  }
+  .logo {
+    width: 150px;
+    height: auto;
+  }
+  .titulo {
+    font-size: 2rem;
+    margin: 0;
+    color: #333;
+  }
+
+  /* Menú de navegación */
+  .menu {
+    background-color: #333;
+    padding: 0.5rem 0;
+  }
+  .menuLista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  .menuListaOpcion a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+  }
+  .menuListaOpcion a:hover {
+    background-color: #0056b3;
+  }
+  /* Contenedor principal */
+  .mainContainer {
+    padding: 2rem;
+  }
+  /* Formulario */
+  .mainForm {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .formSection {
+    margin-bottom: 1rem;
+  }
+  label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    margin: auto;
+
+  }
+  
+input[type="text"],
+input[type="number"],
+input[type="radio"],
+input[type="email"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="radio"]{
+  display: inline-block;
+  width: auto;
+  margin-bottom: 0.5rem;
+}
+input[type="submit"] {
+  background-color: #28a745;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+input[type="submit"]:hover {
+  background-color: #218838;
+}
+/* Estilos para la tabla de jugadores */
+#playersContainer table {
+  width: 100%;
+  border-collapse: collapse; /* Unir bordes de las celdas */
+  margin-top: 20px;
+}
+#playersContainer th, #playersContainer td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ddd; /* Borde para cada celda */
+}
+#playersContainer th {
+  background-color: #f0f0f0; /* Color de fondo para encabezados */
+  font-weight: bold;
+}
+/* Estilos para los botones */
+button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.delete {
+  background-color: #f44336; /* Rojo para eliminar */
+  color: white;
+}
+.edit {
+  background-color: #FFC107; /* Amarillo para editar */
+  color: white;
+}
+
+#notification {
+  position: fixed;
+  top: 20px;
+  left: auto;
+  background-color: #4CAF50; /* Color verde de éxito */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  opacity: 0; /* Inicialmente oculto */
+  transition: opacity 0.5s ease; /* Transición suave para la opacidad */
+}
+#notification.show {
+  opacity: 1; /* Visible cuando se agrega la clase 'show' */
+}
