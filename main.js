@@ -17,13 +17,17 @@ let id='';
 
 window.addEventListener('DOMContentLoaded', async () =>{
   onGetPlayers((querySnapshot)=>{
-    let html="<tr><th>Nombre</th><th>Edad</th><th>Telefono</th><th>Sexo</th><th>Nivel</th><th>Instagram</th><th>Email</th><th>Acciones</th></tr>";
+    let html="<tr><th>Apellido</th><th>Nombre</th><th>Edad</th><th>Telefono</th><th>Sexo</th><th>Nivel</th><th>Instagram</th><th>Email</th><th>Acciones</th></tr>";
     let boton = document.getElementById('inscribir');
         boton.innerHTML = 'Guardar';
     querySnapshot.forEach((doc) => {
       const player = doc.data();
       html += `
       <tr> 
+      <td>${
+            player.apellido
+        }</td>
+      <td>
       <td>${
             player.nombre
         }</td>
@@ -70,6 +74,7 @@ window.addEventListener('DOMContentLoaded', async () =>{
       button.addEventListener('click', async (e) => {
         const doc = await getPlayer(e.target.dataset.id);
         const player = doc.data();
+        mainForm.apellido.value = player.apellido;
         mainForm.nombre.value = player.nombre;
         mainForm.edad.value = player.edad;
         mainForm.telefono.value = player.telefono;
@@ -90,7 +95,7 @@ window.addEventListener('DOMContentLoaded', async () =>{
 
 mainForm.addEventListener('submit', (e) => {
     e.preventDefault();
-
+    const apellido = document.getElementById('apellido').value;
     const nombre = document.getElementById('nombre').value;
     const edad = parseInt(document.getElementById('edad').value);
     const telefono = parseInt(document.getElementById('telefono').value);
@@ -100,10 +105,10 @@ mainForm.addEventListener('submit', (e) => {
     const email = document.getElementById('email').value;
 
     if(editStatus){
-      updatePlayer((id), {nombre, edad, telefono, sexo, nivel, instagram, email});
+      updatePlayer((id), {apellido, nombre, edad, telefono, sexo, nivel, instagram, email});
       editStatus = false;
     }else{
-      savePlayer(nombre, edad, telefono, sexo, nivel, instagram, email);
+      savePlayer(apellido, nombre, edad, telefono, sexo, nivel, instagram, email);
       showNotification();
     }
     

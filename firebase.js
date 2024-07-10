@@ -20,8 +20,8 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 
 
-export const savePlayer = (nombre, edad, telefono, sexo, nivel, instagram, email) =>{
-    addDoc(collection(db, 'jugadores'), {nombre, edad, telefono, sexo, nivel, instagram, email})
+export const savePlayer = (apellido, nombre, edad, telefono, sexo, nivel, instagram, email) =>{
+    addDoc(collection(db, 'jugadores'), {apellido, nombre, edad, telefono, sexo, nivel, instagram, email})
 }
 
 export const getPlayers = () => {
