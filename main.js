@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', async () =>{
       <td>${
             player.apellido
         }</td>
-      <td>
+      
       <td>${
             player.nombre
         }</td>
