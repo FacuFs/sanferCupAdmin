@@ -14,16 +14,21 @@ function showNotification() {
 
 let editStatus = false;
 let id='';
+let numero = 0;
 
 window.addEventListener('DOMContentLoaded', async () =>{
   onGetPlayers((querySnapshot)=>{
-    let html="<tr><th>Apellido</th><th>Nombre</th><th>Edad</th><th>Telefono</th><th>Sexo</th><th>Nivel</th><th>Instagram</th><th>Email</th><th>Acciones</th></tr>";
+    numero ++;
+    let html="<tr><th>N°</th><th>Apellido</th><th>Nombre</th><th>Edad</th><th>Telefono</th><th>Sexo</th><th>Nivel</th><th>Instagram</th><th>Email</th><th>Acciones</th></tr>";
     let boton = document.getElementById('inscribir');
         boton.innerHTML = 'Guardar';
     querySnapshot.forEach((doc) => {
       const player = doc.data();
       html += `
-      <tr> 
+      <tr>
+      <td>${
+            numero
+        }</td>
       <td>${
             player.apellido
         }</td>
