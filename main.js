@@ -19,7 +19,7 @@ let numero = 0;
 window.addEventListener('DOMContentLoaded', async () =>{
   onGetPlayers((querySnapshot)=>{
     numero ++;
-    let html="<tr><th>N°</th><th>Apellido</th><th>Nombre</th><th>Edad</th><th>Telefono</th><th>Sexo</th><th>Nivel</th><th>Instagram</th><th>Email</th><th>Acciones</th></tr>";
+    let html=`<tr><th>N°</th><th>Apellido</th><th>Nombre</th><th>Edad</th><th>Telefono</th><th>Sexo</th><th data-type="string">Nivel</th><th>Instagram</th><th>Email</th><th>Acciones</th></tr>`;
     let boton = document.getElementById('inscribir');
         boton.innerHTML = 'Guardar';
     querySnapshot.forEach((doc) => {
