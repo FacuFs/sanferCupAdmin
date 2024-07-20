@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', async () =>{
       html += `
       <tr>
       <td>${
-            numero
+            numero ++
         }</td>
       <td>${
             player.apellido
